@@ -1,4 +1,5 @@
 import React from 'react';
+import { Platform } from 'react-native';
 
 import { createStackNavigator, createBottomTabNavigator, createAppContainer } from 'react-navigation';
 
@@ -25,7 +26,14 @@ const NumberStack = createStackNavigator({
 const TabNavigator = createBottomTabNavigator({
     HomeStack: HomeStack,
     NumberStack: NumberStack,
-});
+},
+{
+    tabBarOptions: {
+      activeTintColor: Platform.OS === 'ios' ? '#e91e63' : '#fff',
+    },
+    swipeEnabled: true
+  }
+  );
 
 export default createAppContainer(TabNavigator);
 
