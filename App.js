@@ -5,7 +5,7 @@
  * @format
  * @flow
  */
-
+//TODO Immutable persist async action
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 
