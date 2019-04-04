@@ -24,19 +24,25 @@ const NumberStack = createStackNavigator({
 });
 
 const TabNavigator = createBottomTabNavigator({
-    HomeStack: HomeStack,
+    HomeStack: {
+      screen: HomeStack,
+      path: 'HomeStack',
+      navigationOptions: {
+        title: 'HomeStack'
+      }
+    },
     NumberStack: NumberStack,
 },
 {
     tabBarOptions: {
       activeTintColor: Platform.OS === 'ios' ? '#e91e63' : '#fff',
     },
-    swipeEnabled: true
+    swipeEnabled: true,
   }
   );
 
-export default createAppContainer(TabNavigator);
+// export default createAppContainer(TabNavigator);
 
-// const TabNavigatorContainer = createAppContainer(TabNavigator);
+const TabNavigatorContainer = createAppContainer(TabNavigator);
 
-// export default TabNavigatorContainer;
+export default TabNavigatorContainer;
